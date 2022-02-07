@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,20 +39,20 @@
     <link href="https://prophone.herokuapp.com/staticfiles/landing_page_gen/style.css" rel="stylesheet">
     
     <link href="https://prophone.herokuapp.com/staticfiles/landing_page_gen/render.css" rel="stylesheet">
-    
+     <!-- <script src="/staticfiles/landing_page_gen/render.js"></script>   -->
     <script src="https://prophone.herokuapp.com/staticfiles/landing_page_gen/render.js"></script> 
 </head>
 
 <body>
 
-
-
 <div class = "flex w-full flex-col">  
-    <div class="fixed z-40 w-full lg:h-25 lg:py-4 items-start justify-start  bg-white text-gray-700  dark-mode:text-gray-200 dark-mode:bg-gray-800">
+    
+
+<div class="fixed z-40 w-full lg:h-25 lg:py-4 items-start justify-start  bg-white text-gray-700  dark-mode:text-gray-200 dark-mode:bg-gray-800">
   <div x-data="{ open: false }" class="flex flex-col lg:flex-r max-w-screen-xl px-4 mx-auto lg:items-center lg:justify-between lg:flex-row lg:px-6 lg:px-8">
     <div class="py-4 flex flex-row items-center justify-between">
       
-        <a href= " #about "> <img class="h-16 w-auto relative" src="https://landing-page-app-hero-images.s3.amazonaws.com/media/K7193LJ9ZHUQQPTL8KUUN6VCJR1ID8BNSVJNNDF6.jpeg" alt="J.C. &amp; SON Painting logo"> </a>
+        <a href= " index "> <img class="h-16 w-auto relative" src="https://landing-page-app-hero-images.s3.amazonaws.com/media/K7193LJ9ZHUQQPTL8KUUN6VCJR1ID8BNSVJNNDF6.jpeg" alt="J.C. &amp; SON Painting logo"> </a>
       
       <button class="lg:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
         <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
@@ -60,46 +61,53 @@
         </svg>
       </button>
     </div>
-    <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 lg:pb-0 hidden lg:flex lg:flex-row  lg:justify-end ">
+    <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 lg:pb-0 hidden lg:flex lg:flex-row  lg:justify-center ">
     
       
 <a 
     class="px-4 py-2 mt-2 text-lg  font-bold bg-transparent rounded-lg lg:mt-0 lg:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" 
-    href="#about">About Us
+    href="index">About Us
 </a>
       
       
 <a 
     class="px-4 py-2 mt-2 text-lg  font-bold bg-transparent rounded-lg lg:mt-0 lg:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" 
-    href="#services">Our Services
+    href="services">Our Services
 </a>
-     
+ 
       
-<a 
-    class="px-4 py-2 mt-2 text-lg  font-bold bg-transparent rounded-lg lg:mt-0 lg:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" 
-    href="#our-work">Our Best Work
-</a>
-     
+        
+
+<div id='mobile-dropdown-parent' onclick='toggleDropDownMobile()' class="px-4 py-2 mt-2 text-lg font-bold bg-transparent rounded-lg lg:mt-0 lg:ml-4 group flex flex-col relative ">
+    <div> Galleries
+        <i class="fa fa-caret-down"></i>
+    </div>
+    <!-- for desktop -->
+    <div class="hidden lg:group-hover:opacity-100 lg:opacity-0 transition duration-500 ease-in-out lg:flex flex-col bg-white z-50 w-full min-w-max absolute top-10 shadow-lg rounded-md px-4 py-4 space-y-3">
+        
+            <a class="transparent rounded-lg text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="gallery-All-Photos"> All Photos </a>
+        
+    </div> 
+    <!-- for mobile b/c can't enable tailwind variants w/o postcss build -->
+    <div id='mobile-dropdown' class="lg:hidden hidden transition duration-500 ease-in-out flex flex-col bg-white z-50 w-full min-w-max absolute top-10 shadow-lg rounded-md px-4 py-4 space-y-3">
+        
+            <a class="transparent rounded-lg text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="gallery-All-Photos"> All Photos </a>
+        
+    </div> 
+
+</div>
+
+
+  
+      
            
       
 <a 
     class="px-4 py-2 mt-2 text-lg  font-bold bg-transparent rounded-lg lg:mt-0 lg:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" 
-    href="#testimonials">Testimonials &amp; Reviews
+    href="testimonials">Testimonials &amp; Reviews
 </a>
  
-         
-      
-<a 
-    class="px-4 py-2 mt-2 text-lg  font-bold bg-transparent rounded-lg lg:mt-0 lg:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" 
-    href="#faqs">FAQs
-</a>
-     
-      
-<a 
-    class="px-4 py-2 mt-2 text-lg  font-bold bg-transparent rounded-lg lg:mt-0 lg:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" 
-    href="#find-us">Service Areas
-</a>
-   
+              
     
   
 
@@ -143,6 +151,8 @@
     </nav>
   </div>
 </div>
+
+
     <section   style= "background-color:#acaec7"  
 class="flex relative flex-col w-full  bg-gray-900 text-white  lg:flex-row lg:flex-wrap sm:mx-auto pt-12 mt-12">
     <div class="flex justify-end p-8 lg:py-32 lg:px-16 lg:pl-10 lg:w-1/2">
@@ -417,457 +427,121 @@ class="flex flex-col flex-grow w-full overflow-hidden  lg:flex-row sm:mx-auto  b
     </section>
     
     
+        
+ 
+    <div id="" class="flex text-center justify-center items-center  w-full lg:w-auto " x-data="{open: false}">
+        
+<button 
+ 
+    onMouseOver="this.style.backgroundColor='white'; this.style.color='#acaec7' "
+    onMouseOut="this.style.backgroundColor='#188e5f'; this.style.color='white'"
+    style="background-color:#188e5f; color:white"               
+
+ id="side-button" type="button" x-on:click.prevent="open = true" class=" 
+  
+
+   mb-3 fixed bottom-0 -right-80 z-10 mr-3 md:mr-0 z-40 inline-flex items-center justify-center h-24 px-6 lg:mr-6 tracking-wide transition duration-200 rounded-lg focus:shadow-outline focus:outline-none  bg-gray-400 text-white hover:bg-white hover:text-gray-900 z-30">
+    <h5 class="text-3xl font-extrabold">Send us a Text</h5> 
+</button>
+
+        <div x-show.transition.opacity="open" class="transform-none p-4 fixed h-screen w-screen flex justify-center items-center bottom-0 right-0 bg-black bg-opacity-75 z-50">
+    <form x-on:click.away="open = false" x-show.transition="open" class=" text-black max-w-3xl max-h-full h-auto p-8 py-10 overflow-auto bg-white border-b-2 border-gray-300 rounded-lg shadow-2xl px-7 mt-16 md:mt-0 md:w-2/5 z-50">
+            <h3 class="mb-6 text-2xl font-medium text-black text-center">Send us a Text</h3>
+        <div class="block mb-4 border border-gray-200 rounded-lg">
+            <input type="text" name="first-name" id="2-first-name" class="block w-full px-4 py-3 border-2 border-transparent rounded-lg focus:border-blue-500 focus:outline-none" placeholder="First Name">
+        </div>
+        <div class="block mb-4 border border-gray-200 rounded-lg">
+            <input type="text" name="last-name" id="2-last-name" class="block w-full px-4 py-3 border-2 border-transparent rounded-lg focus:border-blue-500 focus:outline-none" placeholder="Last Name">
+        </div>
+        <div class="block mb-4 border border-gray-200 rounded-lg">
+            <input type="text" name="phone-number" id="2-phone-number" class="block w-full px-4 py-3 border-2 border-transparent rounded-lg focus:border-blue-500 focus:outline-none" placeholder="Phone Number">
+        </div>
+        <div class="block mb-4 border border-gray-200 rounded-lg">
+            <textarea name="message" cols="5" id="2-message" class="block w-full px-4 py-3 border-2 border-transparent rounded-lg focus:border-blue-500 focus:outline-none" placeholder="What is your message?"></textarea>
+        </div>
+        <div class="block">
+        <button type="button" 
+         
+            onMouseOver="this.style.backgroundColor='#acaec7'; this.style.color='#188e5f' "
+            onMouseOut="this.style.backgroundColor='#188e5f'; this.style.color='white'"
+            style="background-color:#188e5f; color:white"               
+
+         
+        onclick= "send_sms(2, 'JC--SON-Painting')" 
+        class="w-full px-3 py-4 font-bold font-lg text-white  bg-gray-400 text-white hover:bg-black hover:text-gray-400 rounded-lg">Send</button> 
+        </div>           
+
+    </form>
+</div>
+    </div>
+
+    
     
     <section  style= "background-color:#acaec7"   id= "services" class="lg:mt-0 relative w-full px-8 font-sans leading-6  bg-gray-900 border-0 border-gray-200 text-white border-solid ">
-        <div class="flex flex-col items-center max-w-6xl px-8 py-20 mx-auto leading-6 border-solid md:items-stretch md:justify-center md:py-24 ">
+        <div class="flex flex-col items-center max-w-6xl px-8 py-20 mx-auto leading-6 border-solid md:items-stretch md:justify-center md:py-24  mt-24 ">
             
             <h2 class="mb-3 lg:pr-9 text-3xl mx-auto font-extrabold leading-none sm:text-4xl lg:text-7xl tracking-wide text-center">
                 Our Services
             </h2>
             <h2  style= "color:#188e5f"  class="w-full lg:pr-9 max-w-3xl mx-0 mx-auto mt-4 mb-0 font-sans text-sm font-medium leading-relaxed text-center text-gray-400 border-0 border-gray-200 lg:text-lg md:text-base">
-                What we are best at  - expert  painting, staining &amp; home renovations 
-                
+                <!-- What we are best at  - expert  painting, staining &amp; home renovations  -->
+                We provide a variety of painting, staining &amp; home renovations services!
             </h2>
 
             <div class="grid grid-cols-3 gap-5 mt-10 sm:grid-cols-8 lg:grid-cols-12">
 
                     
-                <div class="max-w-xs col-span-4 font-sans border-0 border-gray-200 ">
-                    <div class="box-border flex flex-col items-center  h-full px-2 py-4 md:py-8 mx-4 leading-6 text-center border-solid ">
-                        
-                        <div  class="md:mt-6 font-sans text-center border-0 border-gray-200 ">
-                            <h3  style= "color:#188e5f"  class="box-border text-xl font-bold leading-none tracking-wider border-solid text-gray-400  ">Exterior Painting</h3>
-                            <p
-                                class="box-border mx-0 mt-3 mb-0 font-normal leading-snug text-center border-solid">
-                                Your house turns into a home when you feel at peace with it. We can help your home to look great. It all starts with a fantastic exterior. From exterior touchups to full home recoating we cover it all.
-                            </p>
+                <div class="max-w-xs col-span-4 font-sans rounded-lg border border-gray-200 ">
+                        <a href= "services">
+                            <div class="box-border flex flex-col h-full md:py-8 leading-6 border-solid rounded-lg bg-white border-gray-200">
+                                    
+                        <div  class="font-sans text-center border-gray-200 flex justify-left">
+                            <i  style="color:#188e5f"  class="fas fa-check-square fa-3x pl-5 pr-5 text-gray-400"></i>
+                            <!-- <i  style="color:#188e5f"  class="fal fa-check fa-3x pl-5 pr-5 text-gray-400"></i> -->
+                            <div style="display:flex; justify-content: center; align-items:center">
+                                <h3  class="box-border text-lg font-bold leading-none tracking-wider border-solid text-gray-900">Exterior Painting</h3>
+                            </div>
                         </div>
                     </div>
+                    </a>
                 </div>        
                     
-                <div class="max-w-xs col-span-4 font-sans border-0 border-gray-200 ">
-                    <div class="box-border flex flex-col items-center  h-full px-2 py-4 md:py-8 mx-4 leading-6 text-center border-solid ">
-                        
-                        <div  class="md:mt-6 font-sans text-center border-0 border-gray-200 ">
-                            <h3  style= "color:#188e5f"  class="box-border text-xl font-bold leading-none tracking-wider border-solid text-gray-400  ">Interior Painting</h3>
-                            <p
-                                class="box-border mx-0 mt-3 mb-0 font-normal leading-snug text-center border-solid">
-                                Whether your walls are covered with crayon marks and dings or you just want a new look we can help! We are experts at making your home look new again from inside out.
-                            </p>
+                <div class="max-w-xs col-span-4 font-sans rounded-lg border border-gray-200 ">
+                        <a href= "services">
+                            <div class="box-border flex flex-col h-full md:py-8 leading-6 border-solid rounded-lg bg-white border-gray-200">
+                                    
+                        <div  class="font-sans text-center border-gray-200 flex justify-left">
+                            <i  style="color:#188e5f"  class="fas fa-check-square fa-3x pl-5 pr-5 text-gray-400"></i>
+                            <!-- <i  style="color:#188e5f"  class="fal fa-check fa-3x pl-5 pr-5 text-gray-400"></i> -->
+                            <div style="display:flex; justify-content: center; align-items:center">
+                                <h3  class="box-border text-lg font-bold leading-none tracking-wider border-solid text-gray-900">Interior Painting</h3>
+                            </div>
                         </div>
                     </div>
+                    </a>
                 </div>        
                     
-                <div class="max-w-xs col-span-4 font-sans border-0 border-gray-200 ">
-                    <div class="box-border flex flex-col items-center  h-full px-2 py-4 md:py-8 mx-4 leading-6 text-center border-solid ">
-                        
-                        <div  class="md:mt-6 font-sans text-center border-0 border-gray-200 ">
-                            <h3  style= "color:#188e5f"  class="box-border text-xl font-bold leading-none tracking-wider border-solid text-gray-400  ">Light Carpentry</h3>
-                            <p
-                                class="box-border mx-0 mt-3 mb-0 font-normal leading-snug text-center border-solid">
-                                We are specialists in minor repair, replacement, and installation of stairs, decks, doors, and more. Think of us as a one-stop shop for all your light carpentry needs. We are with you every step of the way.
-                            </p>
+                <div class="max-w-xs col-span-4 font-sans rounded-lg border border-gray-200 ">
+                        <a href= "services">
+                            <div class="box-border flex flex-col h-full md:py-8 leading-6 border-solid rounded-lg bg-white border-gray-200">
+                                    
+                        <div  class="font-sans text-center border-gray-200 flex justify-left">
+                            <i  style="color:#188e5f"  class="fas fa-check-square fa-3x pl-5 pr-5 text-gray-400"></i>
+                            <!-- <i  style="color:#188e5f"  class="fal fa-check fa-3x pl-5 pr-5 text-gray-400"></i> -->
+                            <div style="display:flex; justify-content: center; align-items:center">
+                                <h3  class="box-border text-lg font-bold leading-none tracking-wider border-solid text-gray-900">Light Carpentry</h3>
+                            </div>
                         </div>
                     </div>
+                    </a>
                 </div>        
             
             </div>
         </div>
     </section>
+    <!-- </a> -->
+
     
-    
-    
-    
-
-    <div id="our-work" class="relative mb-0 w-full pt-12 overflow-hidden   bg-white text-gray-900   md:pt-20 xl:pt-20 xl:pb-20">
-        <div class="container relative flex flex-col justify-between h-full max-w-6xl px-10 mx-auto xl:px-0">
-            <h2  style= "color:#acaec7" class="mb-3 text-3xl font-extrabold leading-none sm:text-4xl lg:text-7xl tracking-wide  text-center">Our Best Work</h2>
-            <h2  style= "color:#188e5f" class="my-3 mb-10 text-xl font-medium  text-gray-400  text-center">See why our customers love us</h2>
-            <div class="flex flex-wrap md:mx-4 md:mb-8 md:flex-row" x-data="{ open:false, activeSlide : 0, slides: [   [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/FQ6LXESGT53E4087Z2M8UXCPZPHUP14T99VQ5AXR.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/KC8TS00BBVNIWR90WQ669EDPEF0V4NX47ZULVWWQ.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/2DJVUN94P2Y8AW83DGFTFQ7NB4NATUXMHUVY0QRR.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/Q98W8JUWSHIUU3EDDU1J303U6QN8FXPDV65JR64D.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/583RCE5JR2CAD1HBN2QX3257MJHL0177GD6SORA1.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/YVEYJ6MJJQJKNKWQEOI07MNWS0MQ5Y6UWFKIRL1C.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/UAREB32P3FWITCHHMSZY0714O7FT4CPHU6WLRV6Y.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/RVWQ5B4JUJU6KLR8ZKU81RY9JKJO3GUP11T8VSSP.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/0E0WBXQJDY0VAFI8M57MF7BBLQPIL2BIU6NW9HA1.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/ONH0Q1DO6GXG3UHSPHXYOSJUYR0GKRCAGP80TQFG.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/T8ILBEIDTKVOO60EEJ3S3KQ9KZDWU8QR153E6G8X.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/1U8G9Q54I3SJGOLRAPDF1HRW5SY34NI2SJO28H8F.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/6WMU3CGVM2USLECHCK6PBFY4W9OV2ZRGOUZXK5VT.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/H3KJZXCA6JJYJD4TZIJILXESN6SY811FUO1PX5VO.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/364FSVHNAPC7LJDJNZIRTDRJPK9HR6R0PDRLGZXW.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/ABHJXE8H9SRRBL8X9Q6ANQKYZ781WR33BHX1K2GJ.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/VNU2DGAJIKLHLQBQI6CKECXW5KDNMRXNYY5XRDHH.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/MQPQKZK35OMKLW1B7S0CSUPVETZXTF3384VU1QV5.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/5BRG2645MOOVW5EKRYZ23L3WYOZFURIJS9W2XK6C.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/H99B76W542J2EEXCDNMIOVD9IVZEYJEFD4S7QZSX.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/JJ6397Z3IHS37B73LI1QUJE6MDLRJQ7ONNLBCBEL.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/GKXA4O2NCF9CAZFNO1E3VCEZNILUMS415TRCJ45B.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/7XKN44OGVY1L5XND4KW3G1JXTWOEBEUH3Z15S8EF.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/MQPC03J7CG1UC8VN1C7NR0NQZ27ZM8H603F6RZG1.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/GQQU4WO2MBJF2RPOA3JLKCR11PYDFC0YAQ2EJKX1.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/9T7I64RL8MM96H27T2ZAEHR22DH9BCR6ZFJLW3IQ.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/6108BU3SVXY56A5JXXV1OMOQ4887EMJ5F7LWURAU.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/AYYVT73EXF4NI8VBDRGQSWX3RGCL2LPX7N78HVDE.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/PDHGYMV3UF571ZBYWX36WBE14UXJ9957S4GXZUYJ.jpeg', 'photo'],   ] }" @keydown.escape= "open = false"   >
-                <!-- <div class="flex flex-wrap md:mx-4 md:mb-8 md:flex-row" x-data="{ open:false, activeSlide : 0, slides: [   [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/FQ6LXESGT53E4087Z2M8UXCPZPHUP14T99VQ5AXR.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/KC8TS00BBVNIWR90WQ669EDPEF0V4NX47ZULVWWQ.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/2DJVUN94P2Y8AW83DGFTFQ7NB4NATUXMHUVY0QRR.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/Q98W8JUWSHIUU3EDDU1J303U6QN8FXPDV65JR64D.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/583RCE5JR2CAD1HBN2QX3257MJHL0177GD6SORA1.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/YVEYJ6MJJQJKNKWQEOI07MNWS0MQ5Y6UWFKIRL1C.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/UAREB32P3FWITCHHMSZY0714O7FT4CPHU6WLRV6Y.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/RVWQ5B4JUJU6KLR8ZKU81RY9JKJO3GUP11T8VSSP.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/0E0WBXQJDY0VAFI8M57MF7BBLQPIL2BIU6NW9HA1.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/ONH0Q1DO6GXG3UHSPHXYOSJUYR0GKRCAGP80TQFG.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/T8ILBEIDTKVOO60EEJ3S3KQ9KZDWU8QR153E6G8X.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/1U8G9Q54I3SJGOLRAPDF1HRW5SY34NI2SJO28H8F.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/6WMU3CGVM2USLECHCK6PBFY4W9OV2ZRGOUZXK5VT.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/H3KJZXCA6JJYJD4TZIJILXESN6SY811FUO1PX5VO.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/364FSVHNAPC7LJDJNZIRTDRJPK9HR6R0PDRLGZXW.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/ABHJXE8H9SRRBL8X9Q6ANQKYZ781WR33BHX1K2GJ.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/VNU2DGAJIKLHLQBQI6CKECXW5KDNMRXNYY5XRDHH.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/MQPQKZK35OMKLW1B7S0CSUPVETZXTF3384VU1QV5.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/5BRG2645MOOVW5EKRYZ23L3WYOZFURIJS9W2XK6C.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/H99B76W542J2EEXCDNMIOVD9IVZEYJEFD4S7QZSX.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/JJ6397Z3IHS37B73LI1QUJE6MDLRJQ7ONNLBCBEL.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/GKXA4O2NCF9CAZFNO1E3VCEZNILUMS415TRCJ45B.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/7XKN44OGVY1L5XND4KW3G1JXTWOEBEUH3Z15S8EF.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/MQPC03J7CG1UC8VN1C7NR0NQZ27ZM8H603F6RZG1.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/GQQU4WO2MBJF2RPOA3JLKCR11PYDFC0YAQ2EJKX1.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/9T7I64RL8MM96H27T2ZAEHR22DH9BCR6ZFJLW3IQ.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/6108BU3SVXY56A5JXXV1OMOQ4887EMJ5F7LWURAU.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/AYYVT73EXF4NI8VBDRGQSWX3RGCL2LPX7N78HVDE.jpeg', 'photo'],    [ 'https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1026x720/media/PDHGYMV3UF571ZBYWX36WBE14UXJ9957S4GXZUYJ.jpeg', 'photo'],   ] }" @keydown.escape= "open = false"   > -->
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 0; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/FQ6LXESGT53E4087Z2M8UXCPZPHUP14T99VQ5AXR.jpeg"  alt = "Photo number 1 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 0; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/FQ6LXESGT53E4087Z2M8UXCPZPHUP14T99VQ5AXR.jpeg"  alt = "Photo number 1 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 1; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/KC8TS00BBVNIWR90WQ669EDPEF0V4NX47ZULVWWQ.jpeg"  alt = "Photo number 2 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 1; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/KC8TS00BBVNIWR90WQ669EDPEF0V4NX47ZULVWWQ.jpeg"  alt = "Photo number 2 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 2; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/2DJVUN94P2Y8AW83DGFTFQ7NB4NATUXMHUVY0QRR.jpeg"  alt = "Photo number 3 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 2; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/2DJVUN94P2Y8AW83DGFTFQ7NB4NATUXMHUVY0QRR.jpeg"  alt = "Photo number 3 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 3; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/Q98W8JUWSHIUU3EDDU1J303U6QN8FXPDV65JR64D.jpeg"  alt = "Photo number 4 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 3; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/Q98W8JUWSHIUU3EDDU1J303U6QN8FXPDV65JR64D.jpeg"  alt = "Photo number 4 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 4; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/583RCE5JR2CAD1HBN2QX3257MJHL0177GD6SORA1.jpeg"  alt = "Photo number 5 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 4; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/583RCE5JR2CAD1HBN2QX3257MJHL0177GD6SORA1.jpeg"  alt = "Photo number 5 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 5; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/YVEYJ6MJJQJKNKWQEOI07MNWS0MQ5Y6UWFKIRL1C.jpeg"  alt = "Photo number 6 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 5; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/YVEYJ6MJJQJKNKWQEOI07MNWS0MQ5Y6UWFKIRL1C.jpeg"  alt = "Photo number 6 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 6; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/UAREB32P3FWITCHHMSZY0714O7FT4CPHU6WLRV6Y.jpeg"  alt = "Photo number 7 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 6; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/UAREB32P3FWITCHHMSZY0714O7FT4CPHU6WLRV6Y.jpeg"  alt = "Photo number 7 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 7; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/RVWQ5B4JUJU6KLR8ZKU81RY9JKJO3GUP11T8VSSP.jpeg"  alt = "Photo number 8 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 7; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/RVWQ5B4JUJU6KLR8ZKU81RY9JKJO3GUP11T8VSSP.jpeg"  alt = "Photo number 8 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 8; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/0E0WBXQJDY0VAFI8M57MF7BBLQPIL2BIU6NW9HA1.jpeg"  alt = "Photo number 9 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 8; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/0E0WBXQJDY0VAFI8M57MF7BBLQPIL2BIU6NW9HA1.jpeg"  alt = "Photo number 9 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 9; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/ONH0Q1DO6GXG3UHSPHXYOSJUYR0GKRCAGP80TQFG.jpeg"  alt = "Photo number 10 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 9; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/ONH0Q1DO6GXG3UHSPHXYOSJUYR0GKRCAGP80TQFG.jpeg"  alt = "Photo number 10 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 10; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/T8ILBEIDTKVOO60EEJ3S3KQ9KZDWU8QR153E6G8X.jpeg"  alt = "Photo number 11 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 10; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/T8ILBEIDTKVOO60EEJ3S3KQ9KZDWU8QR153E6G8X.jpeg"  alt = "Photo number 11 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 11; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/1U8G9Q54I3SJGOLRAPDF1HRW5SY34NI2SJO28H8F.jpeg"  alt = "Photo number 12 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 11; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/1U8G9Q54I3SJGOLRAPDF1HRW5SY34NI2SJO28H8F.jpeg"  alt = "Photo number 12 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 12; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/6WMU3CGVM2USLECHCK6PBFY4W9OV2ZRGOUZXK5VT.jpeg"  alt = "Photo number 13 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 12; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/6WMU3CGVM2USLECHCK6PBFY4W9OV2ZRGOUZXK5VT.jpeg"  alt = "Photo number 13 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 13; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/H3KJZXCA6JJYJD4TZIJILXESN6SY811FUO1PX5VO.jpeg"  alt = "Photo number 14 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 13; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/H3KJZXCA6JJYJD4TZIJILXESN6SY811FUO1PX5VO.jpeg"  alt = "Photo number 14 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 14; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/364FSVHNAPC7LJDJNZIRTDRJPK9HR6R0PDRLGZXW.jpeg"  alt = "Photo number 15 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 14; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/364FSVHNAPC7LJDJNZIRTDRJPK9HR6R0PDRLGZXW.jpeg"  alt = "Photo number 15 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 15; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/ABHJXE8H9SRRBL8X9Q6ANQKYZ781WR33BHX1K2GJ.jpeg"  alt = "Photo number 16 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 15; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/ABHJXE8H9SRRBL8X9Q6ANQKYZ781WR33BHX1K2GJ.jpeg"  alt = "Photo number 16 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 16; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/VNU2DGAJIKLHLQBQI6CKECXW5KDNMRXNYY5XRDHH.jpeg"  alt = "Photo number 17 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 16; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/VNU2DGAJIKLHLQBQI6CKECXW5KDNMRXNYY5XRDHH.jpeg"  alt = "Photo number 17 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 17; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/MQPQKZK35OMKLW1B7S0CSUPVETZXTF3384VU1QV5.jpeg"  alt = "Photo number 18 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 17; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/MQPQKZK35OMKLW1B7S0CSUPVETZXTF3384VU1QV5.jpeg"  alt = "Photo number 18 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 18; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/5BRG2645MOOVW5EKRYZ23L3WYOZFURIJS9W2XK6C.jpeg"  alt = "Photo number 19 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 18; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/5BRG2645MOOVW5EKRYZ23L3WYOZFURIJS9W2XK6C.jpeg"  alt = "Photo number 19 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 19; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/H99B76W542J2EEXCDNMIOVD9IVZEYJEFD4S7QZSX.jpeg"  alt = "Photo number 20 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 19; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/H99B76W542J2EEXCDNMIOVD9IVZEYJEFD4S7QZSX.jpeg"  alt = "Photo number 20 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 20; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/JJ6397Z3IHS37B73LI1QUJE6MDLRJQ7ONNLBCBEL.jpeg"  alt = "Photo number 21 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 20; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/JJ6397Z3IHS37B73LI1QUJE6MDLRJQ7ONNLBCBEL.jpeg"  alt = "Photo number 21 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 21; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/GKXA4O2NCF9CAZFNO1E3VCEZNILUMS415TRCJ45B.jpeg"  alt = "Photo number 22 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 21; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/GKXA4O2NCF9CAZFNO1E3VCEZNILUMS415TRCJ45B.jpeg"  alt = "Photo number 22 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 22; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/7XKN44OGVY1L5XND4KW3G1JXTWOEBEUH3Z15S8EF.jpeg"  alt = "Photo number 23 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 22; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/7XKN44OGVY1L5XND4KW3G1JXTWOEBEUH3Z15S8EF.jpeg"  alt = "Photo number 23 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 23; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/MQPC03J7CG1UC8VN1C7NR0NQZ27ZM8H603F6RZG1.jpeg"  alt = "Photo number 24 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 23; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/MQPC03J7CG1UC8VN1C7NR0NQZ27ZM8H603F6RZG1.jpeg"  alt = "Photo number 24 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 24; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/GQQU4WO2MBJF2RPOA3JLKCR11PYDFC0YAQ2EJKX1.jpeg"  alt = "Photo number 25 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 24; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/GQQU4WO2MBJF2RPOA3JLKCR11PYDFC0YAQ2EJKX1.jpeg"  alt = "Photo number 25 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 25; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/9T7I64RL8MM96H27T2ZAEHR22DH9BCR6ZFJLW3IQ.jpeg"  alt = "Photo number 26 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 25; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/9T7I64RL8MM96H27T2ZAEHR22DH9BCR6ZFJLW3IQ.jpeg"  alt = "Photo number 26 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 26; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/6108BU3SVXY56A5JXXV1OMOQ4887EMJ5F7LWURAU.jpeg"  alt = "Photo number 27 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 26; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/6108BU3SVXY56A5JXXV1OMOQ4887EMJ5F7LWURAU.jpeg"  alt = "Photo number 27 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 27; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/AYYVT73EXF4NI8VBDRGQSWX3RGCL2LPX7N78HVDE.jpeg"  alt = "Photo number 28 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 27; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/AYYVT73EXF4NI8VBDRGQSWX3RGCL2LPX7N78HVDE.jpeg"  alt = "Photo number 28 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                                    
-                        
-                        <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 28; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/PDHGYMV3UF571ZBYWX36WBE14UXJ9957S4GXZUYJ.jpeg"  alt = "Photo number 29 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div>
-                        <!-- <div class="flex cursor-pointer sm:h-30 md:h-auto md:w-1/3 px-4 mb-8 hover:bg-opacity-40" @click="activeSlide = 28; open = true; " ><img class="rounded shadow-md object-cover w-full h-60" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/PDHGYMV3UF571ZBYWX36WBE14UXJ9957S4GXZUYJ.jpeg"  alt = "Photo number 29 of J.C. &amp; SON Painting&#x27;s best work performing a null job"   loading="lazy" ></div> -->
-                    
-                 
-                                    
-        
-                <div class="z-50 fixed top-0 left-0 w-full h-full flex items-center justify-center" x-show.transition="open" >
-
-
-                
-                
-                    <div class="flex items-center justify-start w-12  ml-6 md:m-2 z-50 absolute bottom-1/4 md:bottom-0 transform translate-x-12 md:translate-x-32" >
-                    <button
-                     style= "background-color:#188e5f" 
-                            class="text-white w-12 h-12 rounded-full flex items-center justify-center focus:outline-none bg-gray-400"                                
-                            @click="open = false">
-                         <span class = "text-white"> <i class="fas fa-lg fa-times"></i> </span>
-                    </button>
-                    </div>
-
-                    <div class= "h-90 w-90 flex items-center justify-center overflow-hidden">
-
-                        <template  x-for="(slide, index, collection) in slides" :key="index">
-                            <div class="h-full w-full flex items-center justify-center absolute">
-                                <div class="absolute top-0 bottom-0 py-2  px-2 flex flex-col items-center justify-center"
-                                    x-show="activeSlide === index" 
-                                    x-transition:enter="transition ease-out duration-150"
-                                    x-transition:enter-start="opacity-0 transform scale-90"
-                                    x-transition:enter-end="opacity-100 transform scale-100"
-                                    x-transition:leave="transition ease-in duration-150"
-                                    x-transition:leave-start="opacity-100 transform scale-100"
-                                    x-transition:leave-end="opacity-0 transform scale-90">
-
-                                    <template x-if="slide[1] === 'photo' ">
-                                        <img :src="slide[0]" class="object-contain max-w-full max-h-full rounded shadow-lg" />
-                                    </template>
-                                    
-                                    <template x-if="slide[1] != 'photo'  ">
-                                        <video class="object-contain max-w-full max-h-full rounded shadow-lg"  controls> <source :src="slide[0]" >
-                                        </video>
-                                    </template> 
-                                    
-                                </div>
-                                <div  style= "color:#188e5f"  class="fixed text-gray-400 text-sm font-bold bottom-0 transform -translate-x-10 w-40 h-12 mb-2 hidden md:flex justify-center items-center"
-                                    x-show="activeSlide === index">
-                                    <span class="w-12 text-right" x-text="index + 1"></span>
-                                    <span class="w-4 text-center">/</span>
-                                    <span class="w-12 text-left" x-text="slides.length"></span>
-                                </div>
-                            </div>
-                        </template>
-
-                    <div class="fixed md:fixed z-50 absolute bottom-1/4 md:bottom-0 md:mb-2 transform -translate-x-8 md:-translate-x-10 flex justify-center" @click.away="open = false">
-                        <div class="flex items-center justify-end w-12 mr-3 md:mr-16">
-                        <button 
-                                type="button"
-                                 style= "background-color:#188e5f" 
-                                class="w-12 h-12 rounded-full focus:outline-none flex items-center justify-center bg-gray-400" 
-                               
-                                @click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1">
-                                <span class = "text-white"> <i class="fas fa-lg fa-chevron-left"></i> </span>
-                           
-                        </button>
-                        </div>
-                        <div class="flex items-center justify-start w-12 md:ml-16">
-                        <button 
-                                type="button"
-                                 style= "background-color:#188e5f" 
-                                class="text-white font-bold w-12 h-12 rounded-full focus:outline-none flex items-center justify-center  bg-gray-400   "
-                               
-                                @click="activeSlide = activeSlide === slides.length - 1 ? 0 : activeSlide + 1">
-                           <span class = "text-white"> <i class="fas fa-lg fa-chevron-right"></i> </span>
-                        </button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            </div>
-        </div>     
-
-            
-</div>
-        
-    
-    
-    <div  style= "background-color:#acaec7"  id= "testimonials" class=" flex items-center justify-center  bg-gray-900 text-white  py-20 min-w-screen px-4">
-        <div class="px-16 ">
-            <div class="container flex flex-col items-center lg:items-startmx-auto lg:items-center">
-                <div class = "sm:mb-4 md:mb-0">
-                <h2  style= "color:#188e5f"  class="relative flex  text-gray-400 text-center sm:justify-center sm:mb-8 md:justify-start w-full text-lg font-bold tracking-wider uppercase lg:justify-center lg:items-center mb-10">Don&#x27;t just take our word for it</h2>
-                </div>
-
-
-                <h2 class="mb-3 text-3xl font-extrabold leading-none sm:text-4xl lg:text-7xl tracking-wide text-center ">
-                    
-                    Testimonials &amp; Reviews</h2>
-                <div class="block w-full h-1 max-w-lg mt-6 bg-purple-100 rounded-full"></div>
-                
-                
-
-                <div class="items-start justify-start w-full mt-12 mb-4 lg:flex lg:flex-wrap">
-
-                    
-                    
-                    <div class="flex flex-col items-center lg:items-start justify-center w-full h-auto mb-12 lg:w-1/2">
-                    <div class="flex items-center lg:items-start ">
-                        
-                        <div class="flex flex-col justify-start items-center lg:items-start ">
-                            <h3 class="font-bold  text-white  ">Marilyn Fleenor </h3>
-                            <h3 class=" text-white ">Spokane, WA  , Exterior Painting  </h3>
-                            <div class="flex flex-row items-start ">
-                                
-                                
-                                <span class = " text-white "> <i class="fas fa-star"> </i> </span>
-                                
-                                <span class = " text-white "> <i class="fas fa-star"> </i> </span>
-                                
-                                <span class = " text-white "> <i class="fas fa-star"> </i> </span>
-                                
-                                <span class = " text-white "> <i class="fas fa-star"> </i> </span>
-                                
-                                <span class = " text-white "> <i class="fas fa-star"> </i> </span>
-                                
-                                
-                            </div>
-                            <blockquote class="mt-8 lg:pr-5 font-bold text-xl text-center lg:text-left   text-white ">"Such attention to detail! We had Jason paint the exterior of our home and are extremely happy with the results. We could not have asked for a more personable, talented and hard-working man for our project. We highly recommend him for any project you may have."</blockquote>                           
-                        </div>
-                    </div>
-                    
-                    </div>
-                    
-
-                    
-                    
-                    <div class="flex flex-col items-center lg:items-start justify-center w-full h-auto mb-12 lg:w-1/2">
-                    <div class="flex items-center lg:items-start ">
-                        
-                        <div class="flex flex-col justify-start items-center lg:items-start ">
-                            <h3 class="font-bold  text-white  ">Scott Robertson</h3>
-                            <h3 class=" text-white ">Spokane, WA  , Exterior Painting  </h3>
-                            <div class="flex flex-row items-start ">
-                                
-                                
-                                <span class = " text-white "> <i class="fas fa-star"> </i> </span>
-                                
-                                <span class = " text-white "> <i class="fas fa-star"> </i> </span>
-                                
-                                <span class = " text-white "> <i class="fas fa-star"> </i> </span>
-                                
-                                <span class = " text-white "> <i class="fas fa-star"> </i> </span>
-                                
-                                <span class = " text-white "> <i class="fas fa-star"> </i> </span>
-                                
-                                
-                            </div>
-                            <blockquote class="mt-8 lg:pr-5 font-bold text-xl text-center lg:text-left   text-white ">"Jay is a talented painter and has done several projects for myself and my extended family. I would recommend his services."</blockquote>                           
-                        </div>
-                    </div>
-                    
-                    </div>
-                    
-
-                    
-                </div>  
-                
-                <div class = "flex flex-col space-y-5 md:flex-row md:space-x-5 md:space-y-0 ">
-                
-                <a target= "_blank" href="https://www.facebook.com/JCandSONPainting/reviews"  class="w-full">
-                    <button  
-                onMouseOver="this.style.backgroundColor='white'; this.style.color='#acaec7' "
-                onMouseOut="this.style.backgroundColor='#188e5f'; this.style.color='white'"
-                style="background-color:#188e5f; color:white"               
-                
-                   type="button" class="inline-flex w-full items-center justify-center h-16 px-6 lg:mr-6 tracking-wide transition duration-200 rounded-lg focus:shadow-outline focus:outline-none   text-black  bg-gray-400  hover:bg-white hover:text-gray-900 ">
-                            <h5 class="text-2xl font-extrabold">Leave a Review</h5> 
-                    </button>
-                </a>
-                
-             
-                
-                <a target= "_blank" href="https://www.facebook.com/JCandSONPainting/reviews" class="w-full">
-                    <button  
-                onMouseOver="this.style.backgroundColor='white'; this.style.color='#acaec7' "
-                onMouseOut="this.style.backgroundColor='#188e5f'; this.style.color='white'"
-                style="background-color:#188e5f; color:white"               
-                
-                  type="button" class="inline-flex w-full  items-center justify-center h-16 px-6 lg:mr-6 tracking-wide transition duration-200 rounded-lg focus:shadow-outline focus:outline-none   text-black  bg-gray-400  hover:bg-white hover:text-gray-900 ">
-                            <h5 class="text-2xl font-extrabold">See More Reviews</h5> 
-                    </button>
-                </a>
-               
-            </div>
-
-                         
-
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-<section id= "faqs" class="py-16   bg-white text-gray-900  md:py-20 lg:py-24">
-    <div class="max-w-5xl px-12 mx-auto xl:px-0">
-
-        <h2  style= "color:#acaec7"  class="mb-5 text-3xl  mx-auto text-center font-extrabold leading-none sm:text-4xl lg:text-7xl">FAQs</h2>
-         <h2  style= "color:#188e5f"  class="my-3 mb-10  text-xl font-medium  text-gray-400 text-center">Your questions answered</h2>
-
-        <div class="relative mt-12 space-y-3">
-
-        
-
-            <!-- Question 1 -->
-            <div x-data="{ show: false }" class="relative overflow-hidden border-b border-gray-100 select-none">
-                <h3  
-                onMouseOver="this.style.color='#188e5f' "
-                onMouseOut=" this.style.color='#acaec7'"
-                style="color:#acaec7;"               
-                
-                                 
-                @click="show=!show" class=" text-center flex items-center justify-between px-2 text-xl font-medium text-gray-900  cursor-pointer sm:text-xl md:text-2xl py-7 hover:text-gray-400  lg:text-left">
-                    <span class = "flex text-left lg:text-left">What is the best way to get a quote?</span>
-                    <svg class="w-6 h-6 mr-2 transition-all duration-200 ease-out transform rotate-0" :class="{ '-rotate-180' : show }" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </h3>
-                <p  style= "color:#acaec7"  class="px-2 pt-0 -mt-2  sm:text-lg py-7 text-gray-900 text-center lg:text-left"
-                    x-transition:enter="transition-all ease-out duration-300"
-                    x-transition:enter-start="opacity-0 transform -translate-y-4"
-                    x-transition:enter-end="opacity-100 transform -translate-y-0"
-                    x-transition:leave="transition-all ease-in duration-300"
-                    x-transition:leave-start="opacity-100 transform -translate-y-0"
-                    x-transition:leave-end="opacity-0 transform -translate-y-4"
-                    x-show="show"
-                    x-cloak>The best way to get in touch is to call or text (509) 638-4551. We provide personal attention to every customer.</p>
-            </div>
-
-        
-
-        </div>
-    </div>
-</section>
 
     
 
@@ -904,8 +578,9 @@ class="flex flex-col flex-grow w-full overflow-hidden  lg:flex-row sm:mx-auto  b
 </section>
 
 
+    
 
-    <section  style= "background-color:#acaec7"   class="py-10 bg-gray-900">
+<section  style= "background-color:#acaec7"   class="py-10 bg-gray-900">
     
         <div class="flex flex-col justify-around text-center md:flex-row">
             <p class="order-last text-sm leading-tight text-gray-400 md:order-first"> Crafted with <a  href="https://www.prophone.com/prosite" class="  text-white ">ProPhone</a>. Built with ❤️ by our team. </p>
@@ -931,7 +606,7 @@ class="flex flex-col flex-grow w-full overflow-hidden  lg:flex-row sm:mx-auto  b
             </ul>
         </div>
     </div>
-</section>     
+</section> 
 </div> 
 
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
